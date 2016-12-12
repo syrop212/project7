@@ -33,3 +33,12 @@ document.addEventListener("mousedown", function(e) {
   // what do you want to do when the user presses down
   // on the mouse button?
 })
+document.addEventListener("mousemove", function(e) {
+  transformPoint()
+  var selectedShape
+  var selectedColor
+  var selectedSize
+})
+document.addEventListener("mouseup", function(e) {
+
+})
