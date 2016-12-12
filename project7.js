@@ -35,9 +35,9 @@ document.addEventListener("mousedown", function(e) {
 })
 document.addEventListener("mousemove", function(e) {
   transformPoint()
-  var selectedShape
-  var selectedColor
-  var selectedSize
+  var selectedShape = document.getElementById("shapeSelect")
+  var selectedColor = document.getElementById("colorSelect")
+  var selectedSize = document.getElementById("sizeSelect")
 })
 document.addEventListener("mouseup", function(e) {
 
