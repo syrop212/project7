@@ -14,8 +14,8 @@ function transformPoint(event) {
 function drawSquare(x, y, size, color) {
   // square drawing code here
   var rect = document.createElementNS(namespace, "rect")
-  rect.setAttribute("x", pt.x)
-  rect.setAttribute("y", pt.y)
+  rect.setAttribute("x", x)
+  rect.setAttribute("y", y)
   rect.setAttribute("width", size)
   rect.setAttribute("height", size)
   rect.setAttribute("fill", color)
@@ -34,10 +34,19 @@ document.addEventListener("mousedown", function(e) {
   // on the mouse button?
 })
 document.addEventListener("mousemove", function(e) {
-  transformPoint()
-  var selectedShape = document.getElementById("shapeSelect")
-  var selectedColor = document.getElementById("colorSelect")
-  var selectedSize = document.getElementById("sizeSelect")
+  var pt = transformPoint(e)
+  var xpos = pt.x
+  var ypos = pt.y
+  var selectedShape = document.getElementById("shapeSelect").value
+  var selectedColor = document.getElementById("colorSelect").value
+  var selectedSize = document.getElementById("sizeSelect").value
+if(selectedShape == "square") {
+  drawSquare(xpos, ypos, selectedSize, selectedColor)
+}
+else if (selectedShape == "circle") {
+  drawCircle(xpos, ypos, selectedSize, selectedColor)
+}
+
 })
 document.addEventListener("mouseup", function(e) {
 
