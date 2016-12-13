@@ -19,6 +19,7 @@ function drawSquare(x, y, size, color) {
   rect.setAttribute("width", size)
   rect.setAttribute("height", size)
   rect.setAttribute("fill", color)
+  screen.appendChild(rect)
 }
 function drawCircle(x, y, size, color) {
   var circle = document.createElementNS(namespace, "circle")
@@ -26,6 +27,7 @@ function drawCircle(x, y, size, color) {
   circle.setAttribute("cy", y)
   circle.setAttribute("r", size)
   circle.setAttribute("fill", color)
+  screen.appendChild(circle)
 }
 
 // Step 3: Event listeners
