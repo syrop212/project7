@@ -1,5 +1,6 @@
 var screen = document.getElementById("screen")
 var namespace = "http://www.w3.org/2000/svg"
+var drawing = false
 
 // utility function
 function transformPoint(event) {
@@ -34,8 +35,11 @@ function drawCircle(x, y, size, color) {
 document.addEventListener("mousedown", function(e) {
   // what do you want to do when the user presses down
   // on the mouse button?
+drawing = true
+
 })
 document.addEventListener("mousemove", function(e) {
+if(drawing == true) {
   var pt = transformPoint(e)
   var xpos = pt.x
   var ypos = pt.y
@@ -48,8 +52,9 @@ if(selectedShape == "square") {
 else if (selectedShape == "circle") {
   drawCircle(xpos, ypos, selectedSize, selectedColor)
 }
-
+}
 })
 document.addEventListener("mouseup", function(e) {
+drawing = false
 
 })
