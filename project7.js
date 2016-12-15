@@ -1,6 +1,8 @@
 var screen = document.getElementById("screen")
 var namespace = "http://www.w3.org/2000/svg"
 var drawing = false
+var rainbowPen = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"]
+var rainbowIndex = 0
 
 // utility function
 function transformPoint(event) {
@@ -31,6 +33,7 @@ function drawCircle(x, y, size, color) {
   screen.appendChild(circle)
 }
 
+
 // Step 3: Event listeners
 document.addEventListener("mousedown", function(e) {
   // what do you want to do when the user presses down
@@ -52,6 +55,10 @@ if(selectedShape == "square") {
 else if (selectedShape == "circle") {
   drawCircle(xpos, ypos, selectedSize, selectedColor)
 }
+}
+if(selectedColor == "rainbow") {
+  selectedColor = rainbowPen[rainbowIndex]
+  rainbowIndex = rainbowIndex+1
 }
 })
 document.addEventListener("mouseup", function(e) {
